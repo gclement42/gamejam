@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cng2rwuu34435"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_r3d4j"]
+[ext_resource type="PackedScene" uid="uid://bopv3nx7w3ny5" path="res://Assets/Characters/DamianCooper/DamianCooper.tscn" id="2_b5jvm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjeb1"]
+size = Vector3(0.22513, 0.633986, 0.374847)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_r3d4j")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="DamianCooper" parent="Pivot" instance=ExtResource("2_b5jvm")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00955707, 0.325763, 0.0350189)
+shape = SubResource("BoxShape3D_rjeb1")
