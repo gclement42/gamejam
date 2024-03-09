@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://gyf36fu1et07"]
+
+[ext_resource type="PackedScene" uid="uid://7apxauo1j2iq" path="res://Assets/Characters/DamianCooper.glb" id="1_rmnkt"]
+
+[node name="DamianCooper" instance=ExtResource("1_rmnkt")]
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(0.00999999, 0, 0, 0, -4.37113e-10, -0.00999999, 0, 0.00999999, -4.37113e-10, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(0.129341, 0.501516, -36.0996)
+bones/0/rotation = Quaternion(-0.438531, 0.520246, -0.562581, 0.469614)
+bones/1/rotation = Quaternion(-0.0259946, -0.00700641, 0.0216232, 0.999404)
+bones/2/rotation = Quaternion(-0.00705319, -0.0200018, 0.0143016, 0.999673)
+bones/3/rotation = Quaternion(-0.00266662, -0.0198823, -0.02555, 0.999472)
+bones/4/rotation = Quaternion(0.00829732, -0.0102856, -0.0283083, 0.999512)
+bones/5/rotation = Quaternion(-0.00310018, -0.033483, -0.0118595, 0.999364)
+bones/7/rotation = Quaternion(0.716336, -0.0756462, 0.182345, 0.669246)
+bones/8/rotation = Quaternion(0.0272848, 0.811094, 0.584274, -0.00251312)
+bones/9/rotation = Quaternion(0.0149664, 0.000422363, -0.311189, 0.95023)
+bones/11/rotation = Quaternion(0.0277865, -0.636684, 0.769906, 0.0332576)
+bones/12/rotation = Quaternion(0.548353, -0.145799, 0.132268, 0.812747)
+bones/13/rotation = Quaternion(-0.00690721, -0.000227127, -0.279884, 0.960009)
+bones/15/rotation = Quaternion(3.47919e-05, 0.0319131, 0.981625, 0.188131)
+bones/16/rotation = Quaternion(0.053784, 0.0156366, 0.55061, 0.832881)
+bones/17/rotation = Quaternion(0.33518, 0.652577, -0.383628, 0.560916)
+bones/18/rotation = Quaternion(0.43216, 0.13151, -0.0147217, 0.892035)
+bones/20/rotation = Quaternion(-0.103883, 0.085256, 0.988889, 0.0635513)
+bones/21/rotation = Quaternion(-0.00581572, -0.0146666, 0.153614, 0.988005)
+bones/22/rotation = Quaternion(0.372681, 0.542318, -0.430268, 0.617956)
+bones/23/rotation = Quaternion(0.294661, -0.163827, 0.0407292, 0.940573)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Armature|mixamo_com|Layer0"
+speed_scale = 0.0
+movie_quit_on_finish = true
