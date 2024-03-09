@@ -24,7 +24,7 @@ func _physics_process(delta):
 		
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
-	target_velocity.y = target_velocity.y - (fall_acceleration * delta)
+	#target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 	
 	velocity = target_velocity
 	move_and_slide()

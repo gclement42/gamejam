@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d1arhkibborkd"]
+[gd_scene load_steps=27 format=3 uid="uid://d1arhkibborkd"]
 
 [ext_resource type="Texture2D" uid="uid://cykgrqssd3311" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Floor01_C.png" id="1_kp0jg"]
 [ext_resource type="Texture2D" uid="uid://biceajljrqe03" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Wall03_C.png" id="2_1ip5s"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c85r457jl0u4n" path="res://objects/door.tscn" id="4_jck2h"]
 [ext_resource type="PackedScene" uid="uid://bb4xn5qrim8a6" path="res://Assets/Models/stairs_wide/stairs_wide.glb" id="5_e2kxh"]
 [ext_resource type="PackedScene" uid="uid://ddle3h5t1po1l" path="res://objects/pillar.tscn" id="6_1ju1u"]
+[ext_resource type="PackedScene" uid="uid://cng2rwuu34435" path="res://characters/player.tscn" id="7_0xfnl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhiow"]
 albedo_texture = ExtResource("1_kp0jg")
@@ -14,7 +15,8 @@ uv1_scale = Vector3(10, 5, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_plv6f"]
 size = Vector3(0, 10, 10)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_o8eor"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7u0np"]
+size = Vector3(0, 10, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5h2c"]
 albedo_texture = ExtResource("2_1ip5s")
@@ -24,11 +26,17 @@ uv1_scale = Vector3(15, 1, 1)
 size = Vector3(0, 2, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q3frn"]
-size = Vector3(0, 0.1, 0.5)
+size = Vector3(0, 2, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0j7h"]
 albedo_texture = ExtResource("2_1ip5s")
 uv1_scale = Vector3(5, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_68h60"]
+size = Vector3(0, 2, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3l2se"]
+size = Vector3(2.42297, 1.70996, 2.94324)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7donl"]
 size = Vector3(0, 2, 2.5)
@@ -38,6 +46,15 @@ albedo_texture = ExtResource("2_1ip5s")
 uv1_scale = Vector3(15, 1, 1)
 uv1_offset = Vector3(0.98, 0.57, 0.195)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8y17e"]
+size = Vector3(1.69446, 0.0506592, 2.15318)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gkqs7"]
+size = Vector3(0.0567627, 0.167969, 1.91763)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhlgs"]
+size = Vector3(0.0744629, 0.167969, 2.34216)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64g7q"]
 albedo_texture = ExtResource("1_kp0jg")
 uv1_scale = Vector3(2.27, 7.95, 1)
@@ -45,11 +62,8 @@ uv1_scale = Vector3(2.27, 7.95, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_83dh7"]
 size = Vector3(0, 10, 2.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_8sa6r"]
-size = Vector3(0, 10, 2.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_38gef"]
-size = Vector3(0, 3, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_2a711"]
+size = Vector3(1.8434, 1, 1.72107)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h51si"]
 size = Vector3(0, 2, 2.5)
@@ -68,19 +82,21 @@ mesh = SubResource("BoxMesh_plv6f")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
-shape = SubResource("WorldBoundaryShape3D_o8eor")
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325393, -0.256165, 0.26)
+shape = SubResource("BoxShape3D_7u0np")
 
-[node name="ceilor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98495, 0)
+[node name="ceiling" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.88059, 0)
 
-[node name="mesh" type="MeshInstance3D" parent="ceilor"]
+[node name="mesh" type="MeshInstance3D" parent="ceiling"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325393, -0.256165, 0.26)
 material_override = SubResource("StandardMaterial3D_nhiow")
 mesh = SubResource("BoxMesh_plv6f")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ceilor"]
-shape = SubResource("WorldBoundaryShape3D_o8eor")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ceiling"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325393, -0.256165, 0.26)
+shape = SubResource("BoxShape3D_7u0np")
 
 [node name="wall_left_0" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.253, 0, 0)
@@ -91,7 +107,7 @@ material_override = SubResource("StandardMaterial3D_h5h2c")
 mesh = SubResource("BoxMesh_3xsjy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_left_0"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.744111, 5.01238, 0.259)
 shape = SubResource("BoxShape3D_q3frn")
 
 [node name="wall_left_1" type="StaticBody3D" parent="."]
@@ -103,7 +119,7 @@ material_override = SubResource("StandardMaterial3D_h5h2c")
 mesh = SubResource("BoxMesh_3xsjy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_left_1"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.72874, 3.02495, 0.191169)
 shape = SubResource("BoxShape3D_q3frn")
 
 [node name="wall_right_0" type="StaticBody3D" parent="."]
@@ -115,7 +131,7 @@ material_override = SubResource("StandardMaterial3D_h5h2c")
 mesh = SubResource("BoxMesh_3xsjy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_right_0"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.757375, 5.01238, 0.259)
 shape = SubResource("BoxShape3D_q3frn")
 
 [node name="wall_under_stair" type="StaticBody3D" parent="."]
@@ -124,23 +140,17 @@ transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.821
 [node name="mesh" type="MeshInstance3D" parent="wall_under_stair"]
 transform = Transform3D(-8.89268e-08, -1, -4.37084e-08, -0.0117109, 4.47468e-08, -0.999931, 0.999931, -8.84088e-08, -0.0117109, 0.757376, 3.78233, 3.2855)
 material_override = SubResource("StandardMaterial3D_d0j7h")
-mesh = SubResource("BoxMesh_7donl")
+mesh = SubResource("BoxMesh_68h60")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_under_stair"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
-shape = SubResource("BoxShape3D_q3frn")
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.833506, 3.69574, 4.73761)
+shape = SubResource("BoxShape3D_3l2se")
 
-[node name="wall_under_stair2" type="StaticBody3D" parent="."]
-transform = Transform3D(-9.16191e-10, -0.02096, -0.99978, 1, -4.37114e-08, 0, -4.37018e-08, -0.99978, 0.02096, 5.54395, 8.74594e-07, -0.296288)
-
-[node name="mesh" type="MeshInstance3D" parent="wall_under_stair2"]
-transform = Transform3D(-8.89268e-08, -1, -4.37084e-08, -0.0117109, 4.47468e-08, -0.999931, 0.999931, -8.84088e-08, -0.0117109, 0.757376, 3.78233, 3.2855)
+[node name="mesh2" type="MeshInstance3D" parent="wall_under_stair"]
+transform = Transform3D(-1.32103e-07, -1, 1.42789e-09, -0.999466, 1.32079e-07, 0.0326668, -0.0326668, 2.88819e-09, -0.999466, 0.757376, 2.51622, 4.51818)
 material_override = SubResource("StandardMaterial3D_d0j7h")
 mesh = SubResource("BoxMesh_7donl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_under_stair2"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
-shape = SubResource("BoxShape3D_q3frn")
+skeleton = NodePath("")
 
 [node name="wall_right_1" type="StaticBody3D" parent="."]
 transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -0.336328, 1.00784, 0.509262)
@@ -151,31 +161,31 @@ material_override = SubResource("StandardMaterial3D_h5h2c")
 mesh = SubResource("BoxMesh_3xsjy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_right_1"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.72972, 2.72993, 0.259)
 shape = SubResource("BoxShape3D_q3frn")
 
 [node name="wall_back_0" type="StaticBody3D" parent="."]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -0.0253147, 5.24347, -4.39362)
 
 [node name="mesh" type="MeshInstance3D" parent="wall_back_0"]
-transform = Transform3D(0.999549, -0.0300153, 0, 0.0300153, 0.999549, 0, 0, 1.16415e-10, 1, 0.256377, 4.50029, 0.259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.256377, 4.50029, 0.259)
 material_override = SubResource("StandardMaterial3D_h5h2c")
 mesh = SubResource("BoxMesh_3xsjy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_back_0"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.256377, 4.50029, 0.259)
 shape = SubResource("BoxShape3D_q3frn")
 
 [node name="wall_back_1" type="StaticBody3D" parent="."]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -0.0253147, 6.28592, -4.39362)
 
 [node name="mesh" type="MeshInstance3D" parent="wall_back_1"]
-transform = Transform3D(0.999549, -0.0300153, 0, 0.0300153, 0.999549, 0, 0, 1.16415e-10, 1, 0.284792, 3.55404, 0.259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.284792, 3.55404, 0.259)
 material_override = SubResource("StandardMaterial3D_h5h2c")
 mesh = SubResource("BoxMesh_3xsjy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_back_1"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.284792, 3.55404, 0.259)
 shape = SubResource("BoxShape3D_q3frn")
 
 [node name="wall_front_0" type="StaticBody3D" parent="."]
@@ -187,7 +197,7 @@ material_override = SubResource("StandardMaterial3D_h5h2c")
 mesh = SubResource("BoxMesh_3xsjy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_front_0"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.760446, 5.01238, 0.259)
 shape = SubResource("BoxShape3D_q3frn")
 
 [node name="wall_front_1" type="StaticBody3D" parent="."]
@@ -199,7 +209,7 @@ material_override = SubResource("StandardMaterial3D_8p4dt")
 mesh = SubResource("BoxMesh_3xsjy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_front_1"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -4.23516e-22, 1, 1.75379, 5.48297, -0.0295905)
 shape = SubResource("BoxShape3D_q3frn")
 
 [node name="stair" type="StaticBody3D" parent="."]
@@ -208,17 +218,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.147393)
 [node name="stair2" parent="stair" instance=ExtResource("3_niem2")]
 transform = Transform3D(0.583, 0, 0, 0, 0.371718, 0, 0, 0, 0.292, 5.32157, -0.259719, -1.34368)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stair"]
+transform = Transform3D(1, 0, 0, 0, 0.805732, -0.59228, 0, 0.59228, 0.805732, -0.427564, 0.17061, -2.17325)
+shape = SubResource("BoxShape3D_8y17e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="stair"]
+transform = Transform3D(-1, 4.62267e-08, -5.99907e-08, 0, 0.825508, 0.564391, 1.01551e-07, 0.564391, -0.825508, -1.29111, 0.259416, -1.97421)
+shape = SubResource("BoxShape3D_gkqs7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="stair"]
+transform = Transform3D(-1, 4.62267e-08, -5.99907e-08, 0, 0.825508, 0.564391, 1.01551e-07, 0.564391, -0.825508, 0.426655, 0.3555, -2.11475)
+shape = SubResource("BoxShape3D_gkqs7")
+
 [node name="stair_right" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -0.860877, 0, 0.834484, 0, 1, 0, -3.76301e-08, 0.20244, 1.0177, -3.31324)
+transform = Transform3D(-4.37114e-08, -0.042329, -0.999104, 0, 0.999104, -0.042329, 1, -1.85026e-09, -4.36722e-08, 0.20244, 1.0177, -3.31324)
 
 [node name="stair2" parent="stair_right" instance=ExtResource("3_niem2")]
-transform = Transform3D(0.611287, 0, 1.77636e-15, 0, 0.332089, 0, 3.55271e-15, 0, 0.352611, 5.59424, -0.0924599, -0.311961)
+transform = Transform3D(0.611287, 0, 2.66454e-15, 0, 0.332089, 0, 3.55271e-15, 0, 0.352611, 5.59424, -0.219679, -0.311961)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stair_right"]
+transform = Transform3D(1, 8.34888e-14, 1.63425e-13, 0, 0.892641, -0.450769, -1.42109e-14, 0.450769, 0.892641, -0.427563, 0.246787, -1.31308)
+shape = SubResource("BoxShape3D_8y17e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="stair_right"]
+transform = Transform3D(-1, 3.17396e-08, -6.8238e-08, 0, 0.906721, 0.421732, 1.01551e-07, 0.421732, -0.90672, 0.569232, 0.399019, -1.36703)
+shape = SubResource("BoxShape3D_fhlgs")
 
 [node name="stair_left" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 0.860877, 0, 0.834484, 0, -1, 0, -3.76301e-08, -0.956049, 1.0177, -4.15323)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.956049, 1.0177, -4.15323)
 
 [node name="stair2" parent="stair_left" instance=ExtResource("3_niem2")]
-transform = Transform3D(0.611287, 0, 0, 0, 0.332089, 0, 0, 0, 0.352611, 5.59424, -0.157599, -0.311961)
+transform = Transform3D(0.611287, 0, -1.77636e-15, 0, 0.332089, 0, 0, 0, 0.352611, 5.59424, -0.24709, -0.311961)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stair_left"]
+transform = Transform3D(1, -5.50671e-14, 1.77636e-14, 0, 0.913077, -0.407789, -1.06581e-14, 0.407789, 0.913076, -0.427563, 0.19781, -1.35989)
+shape = SubResource("BoxShape3D_8y17e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="stair_left"]
+transform = Transform3D(-1, 3.17396e-08, -6.8238e-08, 0, 0.906721, 0.421732, 1.01551e-07, 0.421732, -0.90672, -1.36795, 0.394044, -1.36934)
+shape = SubResource("BoxShape3D_fhlgs")
 
 [node name="first_floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02462, 0)
@@ -230,25 +268,8 @@ mesh = SubResource("BoxMesh_83dh7")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="first_floor"]
-shape = SubResource("WorldBoundaryShape3D_o8eor")
-
-[node name="first_floor_right" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.00549771, 0, -0.999985, 0, 1, 0, 0.999985, 0, -0.00549771, -0.095, 2, 3.043)
-
-[node name="mesh" type="MeshInstance3D" parent="first_floor_right"]
-transform = Transform3D(-4.37114e-08, -1, -3.25963e-09, 1, -4.37114e-08, 0, -2.77556e-17, -3.25963e-09, 1, -2.70782, -0.283359, -3.70919)
-material_override = SubResource("StandardMaterial3D_64g7q")
-mesh = SubResource("BoxMesh_8sa6r")
-skeleton = NodePath("../..")
-
-[node name="mesh2" type="MeshInstance3D" parent="first_floor_right"]
-transform = Transform3D(-4.37115e-08, -1, -6.0536e-09, 1, -4.37114e-08, 0, -8.32667e-17, -6.0536e-09, 1, -7.36626, -0.238665, -2.85041)
-material_override = SubResource("StandardMaterial3D_64g7q")
-mesh = SubResource("BoxMesh_38gef")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="first_floor_right"]
-shape = SubResource("WorldBoundaryShape3D_o8eor")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353477, -0.675073, -3.78881)
+shape = SubResource("BoxShape3D_2a711")
 
 [node name="first_floor_left" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.00549771, 0, -0.999985, 0, 1, 0, 0.999985, 0, -0.00549771, -7.607, 2, 3.001)
@@ -265,8 +286,20 @@ material_override = SubResource("StandardMaterial3D_64g7q")
 mesh = SubResource("BoxMesh_dxea2")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="first_floor_left"]
-shape = SubResource("WorldBoundaryShape3D_o8eor")
+[node name="first_floor_left2" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.00549771, 0, -0.999985, 0, 1, 0, 0.999985, 0, -0.00549771, 0.57563, 2, 3.04599)
+
+[node name="mesh" type="MeshInstance3D" parent="first_floor_left2"]
+transform = Transform3D(-2.04045e-07, -1, -5.58794e-09, 4.668, -4.37114e-08, 0, -3.33067e-16, -5.12227e-09, 1, -6.81148, -0.272614, -3.2884)
+material_override = SubResource("StandardMaterial3D_64g7q")
+mesh = SubResource("BoxMesh_h51si")
+skeleton = NodePath("../..")
+
+[node name="mesh2" type="MeshInstance3D" parent="first_floor_left2"]
+transform = Transform3D(-2.04045e-07, -1, -7.91624e-09, 4.668, -4.37114e-08, 0, -2.22045e-16, -7.91624e-09, 1, -1.97733, -0.252477, -3.07699)
+material_override = SubResource("StandardMaterial3D_64g7q")
+mesh = SubResource("BoxMesh_dxea2")
+skeleton = NodePath("../..")
 
 [node name="entrance_door" parent="." instance=ExtResource("4_jck2h")]
 transform = Transform3D(0.7596, 0, -0.65039, 0, 1, 0, 0.65039, 0, 0.7596, 1.45779, 0.288435, 5.14132)
@@ -284,10 +317,24 @@ transform = Transform3D(0.645791, 0, 0.763514, 0, 1, 0, -0.763514, 0, 0.645791, 
 transform = Transform3D(-0.655202, 0, -0.755453, 0, 1, 0, 0.755453, 0, -0.655202, -3.39643, 2.20884, -2.14777)
 
 [node name="stairs_wide" parent="." instance=ExtResource("5_e2kxh")]
-transform = Transform3D(-0.0152224, -9.35835, -0.0609024, 0.0320797, -4.43161, 0.134706, -0.00752455, 0.0387394, 0.697507, 1.91434, 2.41341, -2.95925)
+transform = Transform3D(-0.0177828, -8.98339, -0.0609024, 0.0307428, -5.14532, 0.134706, -0.00748992, 0.209314, 0.697507, 1.86604, 2.42533, -2.96577)
 
 [node name="stairs_wide2" parent="." instance=ExtResource("5_e2kxh")]
-transform = Transform3D(-0.0150761, 9.40234, 0.038805, -0.0328744, -4.33221, 0.0485658, 0.00307144, -0.217463, 0.710286, -3.33387, 1.03838, -2.70413)
+transform = Transform3D(-0.0150761, 9.40234, 0.038805, -0.0328744, -4.33221, 0.0485658, 0.00307144, -0.217463, 0.710286, -3.36266, 0.975608, -2.69827)
 
 [node name="Pillar" parent="." instance=ExtResource("6_1ju1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35078, -0.0752087, -2.97659)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.952367, -0.114009, 0.282843, -0.00963561, 0.915774, 0.401578, -0.304803, -0.385175, 0.871054, 1.96988, 2.90674, 4.74856)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12735, 3.10936, 2.56038)
+light_energy = 16.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1316, 3.11305, -3.32785)
+light_energy = 5.26
+
+[node name="Player" parent="." instance=ExtResource("7_0xfnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82362, -0.130746, 1.49629)
