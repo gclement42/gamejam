@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be3qh76ad3riy"
-path.s3tc="res://.godot/imported/Ceiling01_C.png-a186a4238bbee7a25f65bb3d28e9ccc3.s3tc.ctex"
+uid="uid://btoipivxuj3t1"
+path.s3tc="res://.godot/imported/P3.jpg-c9c6cd632bdd1b6b5e8238eb9dfb1d2d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Ceiling01_C.png"
-dest_files=["res://.godot/imported/Ceiling01_C.png-a186a4238bbee7a25f65bb3d28e9ccc3.s3tc.ctex"]
+source_file="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/P3.jpg"
+dest_files=["res://.godot/imported/P3.jpg-c9c6cd632bdd1b6b5e8238eb9dfb1d2d.s3tc.ctex"]
 
 [params]
 
