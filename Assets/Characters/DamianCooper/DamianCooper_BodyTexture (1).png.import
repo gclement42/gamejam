@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de1uafd8kg1vc"
-path.s3tc="res://.godot/imported/DamianCooper_Face.png-b53398609f138ed903e436320f4b25d8.s3tc.ctex"
+uid="uid://b3yxkgv7xd5i0"
+path.s3tc="res://.godot/imported/DamianCooper_BodyTexture (1).png-05256109a17c7f7f55a0654713551621.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Characters/DamianCooper_Face.png"
-dest_files=["res://.godot/imported/DamianCooper_Face.png-b53398609f138ed903e436320f4b25d8.s3tc.ctex"]
+source_file="res://Assets/Characters/DamianCooper/DamianCooper_BodyTexture (1).png"
+dest_files=["res://.godot/imported/DamianCooper_BodyTexture (1).png-05256109a17c7f7f55a0654713551621.s3tc.ctex"]
 
 [params]
 

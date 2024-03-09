@@ -26,6 +26,10 @@ func _physics_process(delta):
 	velocity = target_velocity
 	move_and_slide()
 	
+	var animations = $Pivot/DamianCooper/AnimationPlayer
+	
 	if direction != Vector3.ZERO:
-		$Pivot/DamianCooper/AnimationPlayer.play("Armature|mixamo_com|Layer0")
+		animations.play("Armature|mixamo_com|Layer0")
+	if !animations.is_playing():
+		animations.play("Armature|mixamo_com|Layer0_001")
 	
