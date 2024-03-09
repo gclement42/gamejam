@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bkjjbgbbh74ey"]
+[gd_scene load_steps=19 format=3 uid="uid://bkjjbgbbh74ey"]
 
 [ext_resource type="Texture2D" uid="uid://b3mi14vux8haw" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Tile 15 - 256x256.png" id="1_a5t8p"]
 [ext_resource type="Texture2D" uid="uid://csokmu7u7wnqv" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Tile 4 - 256x256.png" id="2_1wayf"]
@@ -16,7 +16,13 @@ uv1_scale = Vector3(5, 5, 1)
 size = Vector3(0, 8, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lpjfc"]
-size = Vector3(2.15887, 0.892761, 1.01514)
+size = Vector3(2.3621, 0.76045, 1.50981)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdcbh"]
+size = Vector3(0.405126, 0.76045, 0.981955)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m1eik"]
+size = Vector3(2.3621, 0.76045, 1.02641)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22niu"]
 albedo_texture = ExtResource("2_1wayf")
@@ -51,7 +57,7 @@ transform = Transform3D(0.773263, -0.00456323, -0.634069, 0.00579298, 0.999984, 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01989, 0.355748, -1.30073)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91885, 0.330408, -1.49468)
 shape = SubResource("BoxShape3D_lpjfc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
@@ -63,8 +69,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.242031, -0.123785)
 [node name="sink" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sink"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01977, 0.355487, -1.30092)
-shape = SubResource("BoxShape3D_lpjfc")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.716119, 0.304377, -2.31219)
+shape = SubResource("BoxShape3D_rdcbh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="sink"]
 transform = Transform3D(0.63438, 0, 0, 0, 0.6594, 0, 0, 0, 0.692369, -2.10176, 0.0459691, -2.22787)
@@ -75,8 +81,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20177, -0.433953, 0.0785432
 [node name="dresser" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="dresser"]
-transform = Transform3D(-0.00378731, 0, 0.999993, 0, 1, 0, -0.999993, 0, -0.00378731, 3.66191, 0.202258, -1.41695)
-shape = SubResource("BoxShape3D_lpjfc")
+transform = Transform3D(-0.00378731, 0, 0.999993, 0, 1, 0, -0.999993, 0, -0.00378731, 3.64262, 0.36917, -1.23426)
+shape = SubResource("BoxShape3D_m1eik")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="dresser"]
 transform = Transform3D(0.63438, 0, 0, 0, 0.6594, 0, 0, 0, 0.692369, -2.10176, 0.0459691, -2.22787)
@@ -85,13 +91,17 @@ transform = Transform3D(0.63438, 0, 0, 0, 0.6594, 0, 0, 0, 0.692369, -2.10176, 0
 transform = Transform3D(0.00749042, 0, -0.99999, 0, 1.4754, 0, 1.6963, 0, 0.0044156, 8.60314, -0.455027, 1.50187)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.573862, 0, -0.818952, 0, 1, 0, 0.818952, 0, 0.573862, -3.75052, 0.787677, 2.26706)
-fov = 49.5
+transform = Transform3D(-0.0156022, 0, 0.999878, 0, 1, 0, -0.999878, 0, -0.0156022, 3.53204, 0.796875, -0.758837)
+fov = 60.2998
 
 [node name="Player" parent="." instance=ExtResource("7_m6r1d")]
-transform = Transform3D(1.75183, 0, 0, 0, 1.34378, 0, 0, 0, 1, 0.821028, 0, 1.1992)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.821028, -0.29452, 1.1992)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44898, 1.28658, 0)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23801, 0.939229, -0.64678)
 
 [node name="wall" type="StaticBody3D" parent="."]
 
