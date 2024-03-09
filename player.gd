@@ -30,6 +30,16 @@ func _physics_process(delta):
 	
 	if direction != Vector3.ZERO:
 		animations.play("Armature|mixamo_com|Layer0")
+	if Input.is_action_just_released("moveBackward"):
+		animations.stop();
+	if Input.is_action_just_released("moveBackward"):
+		animations.stop();
+	if Input.is_action_just_released("moveForward"):
+		animations.stop();
+	if Input.is_action_just_released("moveRight"):
+		animations.stop();
+	if Input.is_action_just_released("moveLeft"):
+		animations.stop();
 	if !animations.is_playing():
 		animations.play("Armature|mixamo_com|Layer0_001")
 	
