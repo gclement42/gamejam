@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1arhkibborkd"]
+[gd_scene load_steps=19 format=3 uid="uid://d1arhkibborkd"]
 
 [ext_resource type="Texture2D" uid="uid://b808yoxrdf4s" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Floor01_C.png" id="1_igfdw"]
 [ext_resource type="Texture2D" uid="uid://d3t85d5chirpt" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Wall03_C.png" id="2_cikdy"]
 [ext_resource type="PackedScene" uid="uid://c4bp4ov2cky6c" path="res://Assets/Models/stairs/stair.glb" id="3_1j2uf"]
 [ext_resource type="PackedScene" uid="uid://c85r457jl0u4n" path="res://door.tscn" id="4_nw5y2"]
+[ext_resource type="PackedScene" uid="uid://bb4xn5qrim8a6" path="res://Assets/Models/stairs_wide/stairs_wide.glb" id="5_ltunk"]
+[ext_resource type="PackedScene" uid="uid://ddle3h5t1po1l" path="res://pillar.tscn" id="6_q8h27"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhiow"]
 albedo_texture = ExtResource("1_igfdw")
@@ -23,6 +25,13 @@ size = Vector3(0, 2, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q3frn"]
 size = Vector3(0, 0.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0j7h"]
+albedo_texture = ExtResource("2_cikdy")
+uv1_scale = Vector3(5, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7donl"]
+size = Vector3(0, 2, 2.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8p4dt"]
 albedo_texture = ExtResource("2_cikdy")
@@ -100,6 +109,30 @@ mesh = SubResource("BoxMesh_3xsjy")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
 shape = SubResource("BoxShape3D_q3frn")
 
+[node name="wall_under_stair" type="StaticBody3D" parent="."]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -0.336328, 8.74594e-07, 0.509262)
+
+[node name="mesh" type="MeshInstance3D" parent="wall_under_stair"]
+transform = Transform3D(-8.89268e-08, -1, -4.37084e-08, -0.0117109, 4.47468e-08, -0.999931, 0.999931, -8.84088e-08, -0.0117109, 0.757376, 3.78233, 3.2855)
+material_override = SubResource("StandardMaterial3D_d0j7h")
+mesh = SubResource("BoxMesh_7donl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_under_stair"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
+shape = SubResource("BoxShape3D_q3frn")
+
+[node name="wall_under_stair2" type="StaticBody3D" parent="."]
+transform = Transform3D(-9.16191e-10, -0.02096, -0.99978, 1, -4.37114e-08, 0, -4.37018e-08, -0.99978, 0.02096, 5.54395, 8.74594e-07, -0.296288)
+
+[node name="mesh" type="MeshInstance3D" parent="wall_under_stair2"]
+transform = Transform3D(-8.89268e-08, -1, -4.37084e-08, -0.0117109, 4.47468e-08, -0.999931, 0.999931, -8.84088e-08, -0.0117109, 0.757376, 3.78233, 3.2855)
+material_override = SubResource("StandardMaterial3D_d0j7h")
+mesh = SubResource("BoxMesh_7donl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_under_stair2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.240493, 0.189594, 0.259706)
+shape = SubResource("BoxShape3D_q3frn")
+
 [node name="wall_right_1" type="StaticBody3D" parent="."]
 transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -0.336328, 1.00784, 0.509262)
 
@@ -170,7 +203,7 @@ transform = Transform3D(0.583, 0, 0, 0, 0.371718, 0, 0, 0, 0.292, 5.32157, -0.25
 transform = Transform3D(-4.37114e-08, 0, -0.860877, 0, 0.834484, 0, 1, 0, -3.76301e-08, 0.20244, 1.0177, -3.31324)
 
 [node name="stair2" parent="stair_right" instance=ExtResource("3_1j2uf")]
-transform = Transform3D(0.611287, 0, 0, 0, 0.332089, 0, 0, 0, 0.352611, 5.59424, -0.157599, -0.311961)
+transform = Transform3D(0.611287, 0, 1.77636e-15, 0, 0.332089, 0, 3.55271e-15, 0, 0.352611, 5.59424, -0.0924599, -0.311961)
 
 [node name="stair_left" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 0.860877, 0, 0.834484, 0, -1, 0, -3.76301e-08, -0.956049, 1.0177, -4.15323)
@@ -206,7 +239,7 @@ shape = SubResource("WorldBoundaryShape3D_o8eor")
 transform = Transform3D(-0.00549771, 0, -0.999985, 0, 1, 0, 0.999985, 0, -0.00549771, -7.607, 2, 3.001)
 
 [node name="mesh" type="MeshInstance3D" parent="first_floor_left"]
-transform = Transform3D(-4.37114e-08, -1, -2.79397e-09, 1, -4.37114e-08, 0, -2.77556e-17, -2.79397e-09, 1, -3.05173, -0.260216, -3.50082)
+transform = Transform3D(-2.04045e-07, -1, -4.65661e-09, 4.668, -4.37114e-08, 0, -3.33067e-16, -4.65661e-09, 1, -3.05056, -0.312963, -3.2884)
 material_override = SubResource("StandardMaterial3D_64g7q")
 mesh = SubResource("BoxMesh_h51si")
 skeleton = NodePath("../..")
@@ -214,5 +247,17 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="first_floor_left"]
 shape = SubResource("WorldBoundaryShape3D_o8eor")
 
-[node name="door" parent="." instance=ExtResource("4_nw5y2")]
-transform = Transform3D(0.707106, 0, -0.707106, 0, 1, 0, 0.707106, 0, 0.707106, 1.45572, 0.261974, 5.10294)
+[node name="entrance_door" parent="." instance=ExtResource("4_nw5y2")]
+transform = Transform3D(0.7596, 0, -0.65039, 0, 1, 0, 0.65039, 0, 0.7596, 1.45779, 0.288435, 5.14132)
+
+[node name="entrance_door2" parent="." instance=ExtResource("4_nw5y2")]
+transform = Transform3D(-0.65536, 0, -0.755316, 0, 1, 0, 0.755316, 0, -0.65536, -5.4325, 0.276558, 2.9816)
+
+[node name="stairs_wide" parent="." instance=ExtResource("5_ltunk")]
+transform = Transform3D(-0.0152224, -9.35835, -0.0609024, 0.0320797, -4.43161, 0.134706, -0.00752455, 0.0387394, 0.697507, 1.91434, 2.41341, -2.95925)
+
+[node name="stairs_wide2" parent="." instance=ExtResource("5_ltunk")]
+transform = Transform3D(-0.0150761, 9.40234, 0.038805, -0.0328744, -4.33221, 0.0485658, 0.00307144, -0.217463, 0.710286, -3.33387, 1.03838, -2.70413)
+
+[node name="Pillar" parent="." instance=ExtResource("6_q8h27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35078, -0.0752087, -2.97659)

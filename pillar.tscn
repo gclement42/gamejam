@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddle3h5t1po1l"]
+
+[ext_resource type="PackedScene" uid="uid://ckhslhd1acggl" path="res://Assets/Models/pillars/pillar.glb" id="1_4dty0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xs2lu"]
+size = Vector3(0.25, 1.458, 0.193)
+
+[node name="Pillar" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.794796, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.24778, 0, 0, 0, 1, 0.185709, 0.670382, 0.0202314)
+shape = SubResource("BoxShape3D_xs2lu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.209799, 0, 0, 0, 1.33633, 0, 0, 0, 1.05274, 0, -0.127067, 0)
+
+[node name="pillar" parent="MeshInstance3D" instance=ExtResource("1_4dty0")]
+transform = Transform3D(3.09835, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -43.9589, -0.0782395, 0)
