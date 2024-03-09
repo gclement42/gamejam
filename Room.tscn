@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c48g6hy36monf"]
+
+[ext_resource type="PackedScene" uid="uid://bl6kmpvd0jvqs" path="res://wall.tscn" id="1_yw0n2"]
+
+[node name="Room" type="Node3D"]
+
+[node name="wall" parent="." instance=ExtResource("1_yw0n2")]
+transform = Transform3D(2.07775, 0, 0, 0, 1, 0, 0, 0, 2.59403, -0.00145185, -1.19209e-07, -0.191514)

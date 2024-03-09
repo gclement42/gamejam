@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://1j4ov0jv0cg1"]
+[gd_scene load_steps=22 format=3 uid="uid://1j4ov0jv0cg1"]
 
 [ext_resource type="Script" path="res://Node3D.gd" id="1_d47tn"]
 [ext_resource type="Texture2D" uid="uid://b808yoxrdf4s" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Floor01_C.png" id="2_82plr"]
 [ext_resource type="Texture2D" uid="uid://d3t85d5chirpt" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Wall03_C.png" id="3_q2fsi"]
 [ext_resource type="Texture2D" uid="uid://vs3unbnwq2na" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Ceiling02_C.png" id="4_3gcm7"]
+[ext_resource type="PackedScene" uid="uid://b17t70bm4c523" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Model/doorframe.glb" id="5_bpcn3"]
+[ext_resource type="Texture2D" uid="uid://b6ugqvt7lr707" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Doors01_CD.png" id="6_ghacl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdi2v"]
 albedo_texture = ExtResource("2_82plr")
@@ -45,6 +47,14 @@ size = Vector3(0, 0.1, 0.24)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhfaw"]
 albedo_texture = ExtResource("4_3gcm7")
 uv1_scale = Vector3(15, 15, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lui5h"]
+albedo_texture = ExtResource("6_ghacl")
+uv1_triplanar_sharpness = 60.9189
+uv2_offset = Vector3(0.285, 0, 0)
+point_size = 12.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_67llh"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_d47tn")
@@ -88,7 +98,7 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.2400
 shape = SubResource("BoxShape3D_honta")
 
 [node name="wall3" type="StaticBody3D" parent="."]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.541, 0, -0.18)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.540407, -0.000229493, -0.178312)
 
 [node name="mesh" type="MeshInstance3D" parent="wall3"]
 transform = Transform3D(-4.37114e-08, -1, -4.23516e-22, -1, 4.37114e-08, 8.74228e-08, -8.74228e-08, 3.82137e-15, -1, 0.241, 0.188, 0.216234)
@@ -127,3 +137,16 @@ shape = SubResource("WorldBoundaryShape3D_ef1ml")
 transform = Transform3D(-0.992345, 0, 0.123498, 0, 1, 0, -0.123498, 0, -0.992345, -0.33253, 0.249979, 0.0578922)
 light_energy = 0.185
 light_indirect_energy = 0.0
+
+[node name="door" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387073, 0.187941, -0.0651816)
+
+[node name="doorframe" parent="door" instance=ExtResource("5_bpcn3")]
+transform = Transform3D(0.0411036, -0.000309545, 0, 0.000376645, 0.0337809, 0, 0, 0, -0.00263167, -0.0210459, 0.00142653, 0.573267)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door"]
+
+[node name="mesh_door" type="MeshInstance3D" parent="door"]
+transform = Transform3D(1.34984e-16, 4.37114e-10, 0.0446583, 0.0706471, -4.37114e-10, -6.10939e-24, 3.08808e-09, 0.01, -1.95208e-09, 0.104515, 0.0349603, 0.573832)
+material_override = SubResource("StandardMaterial3D_lui5h")
+mesh = SubResource("BoxMesh_67llh")
