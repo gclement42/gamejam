@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dopm2muud13e4"
-path.s3tc="res://.godot/imported/toilet_toilet side.jpg-372339cdde2c104e58eddd36f042686f.s3tc.ctex"
+uid="uid://b7xxyrsgt4o78"
+path.s3tc="res://.godot/imported/dresser_Wood_Dresser2.jpg-c74bb51dff5ab449c7466ddb9887b1e6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Models/toilet/toilet_toilet side.jpg"
-dest_files=["res://.godot/imported/toilet_toilet side.jpg-372339cdde2c104e58eddd36f042686f.s3tc.ctex"]
+source_file="res://Assets/Models/dresser/dresser_Wood_Dresser2.jpg"
+dest_files=["res://.godot/imported/dresser_Wood_Dresser2.jpg-c74bb51dff5ab449c7466ddb9887b1e6.s3tc.ctex"]
 
 [params]
 

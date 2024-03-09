@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cq2y5bdhawp8v"
-path="res://.godot/imported/toilet.glb-8946364b60a8db23894f1bda19cc3f79.scn"
+path="res://.godot/imported/toilet.glb-603f4ab52f09dbfd7fed8d49fbb901cb.scn"
 
 [deps]
 
-source_file="res://Assets/Models/toilet/toilet.glb"
-dest_files=["res://.godot/imported/toilet.glb-8946364b60a8db23894f1bda19cc3f79.scn"]
+source_file="res://Assets/Models/bathtub/toilet.glb"
+dest_files=["res://.godot/imported/toilet.glb-603f4ab52f09dbfd7fed8d49fbb901cb.scn"]
 
 [params]
 

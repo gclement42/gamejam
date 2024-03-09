@@ -1,6 +1,8 @@
 extends CharacterBody3D
 #Move speed in m/s
 @export var speed = 5
+@export var fall_acceleration = 70
+
 var target_velocity = Vector3.ZERO
 
 func _physics_process(delta):
@@ -22,6 +24,7 @@ func _physics_process(delta):
 		
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
+	target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 	
 	velocity = target_velocity
 	move_and_slide()

@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://b4r58eu8w4jwq" path="res://Assets/Models/door/door.glb" id="1_51mgu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8ioc"]
-size = Vector3(0.693359, 0.753906, 0.542191)
+size = Vector3(0.095703, 1.51071, 1.38431)
 
 [node name="door" type="StaticBody3D"]
 transform = Transform3D(0.737277, 0, -0.67559, 0, 1, 0, 0.67559, 0, 0.737277, 0.241903, 0.246115, 2.85463)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.640297, 0, -0.768127, 0, 1, 0, 0.768127, 0, 0.640297, 0.0696371, -0.104122, 0.147252)
+transform = Transform3D(-0.670753, 0.00370238, 0.741671, 0.00522938, 0.999986, -0.00026253, -0.741661, 0.00370238, -0.670763, -1.39008, 0.243133, 0.979294)
 shape = SubResource("BoxShape3D_p8ioc")
 
 [node name="door2" parent="." instance=ExtResource("1_51mgu")]
