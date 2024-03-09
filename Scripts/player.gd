@@ -1,6 +1,7 @@
 extends CharacterBody3D
 #Move speed in m/s
-@export var speed = 5
+@export var speed = 3
+@export var fallAcceleration = 70
 var target_velocity = Vector3.ZERO
 
 func _physics_process(delta):
@@ -8,13 +9,13 @@ func _physics_process(delta):
 	var direction = Vector3.ZERO
 	
 	if Input.is_action_pressed("moveForward"):
-		direction.x += 1
-	if Input.is_action_pressed("moveBackward"):
 		direction.x -= 1
+	if Input.is_action_pressed("moveBackward"):
+		direction.x += 1
 	if Input.is_action_pressed("moveLeft"):
-		direction.z -= 1
-	if Input.is_action_pressed("moveRight"):
 		direction.z += 1
+	if Input.is_action_pressed("moveRight"):
+		direction.z -= 1
 		
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
