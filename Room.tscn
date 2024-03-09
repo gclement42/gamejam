@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c48g6hy36monf"]
+[gd_scene load_steps=2 format=3 uid="uid://do0c1ccwyyrsh"]
 
-[ext_resource type="PackedScene" uid="uid://bl6kmpvd0jvqs" path="res://wall.tscn" id="1_yw0n2"]
+[ext_resource type="PackedScene" uid="uid://c728f0ccmayca" path="res://wall.tscn" id="1_yw0n2"]
 
 [node name="Room" type="Node3D"]
 

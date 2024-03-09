@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://3lenyepxpmys"]
+
+[ext_resource type="PackedScene" uid="uid://bjqv7j8s7o7ly" path="res://Assets/Models/ceilan_fan/ceiling_fan.glb" id="1_nhx8r"]
+
+[node name="ceiling_fan" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.406, 0.355223, -0.0384703)
+
+[node name="ceiling_fan" parent="." instance=ExtResource("1_nhx8r")]
+transform = Transform3D(0.0833393, 0, 0, 0, 0.0945459, 0, 0, 0, 0.0681051, -0.045, -0.051, -0.098)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(0.473471, 0.843938, -0.252178, 0.876174, -0.421929, 0.233014, 0.0902484, -0.331277, -0.939208, -1.80555, 0.126323, 0.0771998)
+light_specular = 0.0
+omni_range = 4.0
+omni_attenuation = 0.812254

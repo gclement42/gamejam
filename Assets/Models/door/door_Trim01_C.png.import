@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjvxblbamiyao"
-path.s3tc="res://.godot/imported/Floor02_C.png-f1800e6aaabb633dd449673d633faa69.s3tc.ctex"
+uid="uid://ccum0330ccixw"
+path.s3tc="res://.godot/imported/door_Trim01_C.png-e99fa9cc84e0d9b468d7282105f944c0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Floor02_C.png"
-dest_files=["res://.godot/imported/Floor02_C.png-f1800e6aaabb633dd449673d633faa69.s3tc.ctex"]
+source_file="res://Assets/Models/door/door_Trim01_C.png"
+dest_files=["res://.godot/imported/door_Trim01_C.png-e99fa9cc84e0d9b468d7282105f944c0.s3tc.ctex"]
 
 [params]
 

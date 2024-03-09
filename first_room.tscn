@@ -1,71 +1,64 @@
-[gd_scene load_steps=22 format=3 uid="uid://1j4ov0jv0cg1"]
+[gd_scene load_steps=20 format=3 uid="uid://1j4ov0jv0cg1"]
 
-[ext_resource type="Script" path="res://Node3D.gd" id="1_d47tn"]
-[ext_resource type="Texture2D" uid="uid://b808yoxrdf4s" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Floor01_C.png" id="2_82plr"]
-[ext_resource type="Texture2D" uid="uid://d3t85d5chirpt" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Wall03_C.png" id="3_q2fsi"]
-[ext_resource type="Texture2D" uid="uid://vs3unbnwq2na" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Ceiling02_C.png" id="4_3gcm7"]
-[ext_resource type="PackedScene" uid="uid://b17t70bm4c523" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Model/doorframe.glb" id="5_bpcn3"]
-[ext_resource type="Texture2D" uid="uid://b6ugqvt7lr707" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Doors01_CD.png" id="6_ghacl"]
+[ext_resource type="Script" path="res://Scripts/Node3D.gd" id="1_vdwdv"]
+[ext_resource type="Texture2D" uid="uid://b808yoxrdf4s" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Floor01_C.png" id="2_5to8d"]
+[ext_resource type="Texture2D" uid="uid://d3t85d5chirpt" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Wall03_C.png" id="3_q7cps"]
+[ext_resource type="Texture2D" uid="uid://vs3unbnwq2na" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Ceiling02_C.png" id="4_ksrvb"]
+[ext_resource type="PackedScene" uid="uid://c85r457jl0u4n" path="res://door.tscn" id="5_hhlfk"]
+[ext_resource type="PackedScene" uid="uid://3lenyepxpmys" path="res://ceiling_fan.tscn" id="6_4iqrc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdi2v"]
-albedo_texture = ExtResource("2_82plr")
-uv1_scale = Vector3(45, 45, 1)
+albedo_texture = ExtResource("2_5to8d")
+uv1_scale = Vector3(10, 5, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vjf0p"]
-size = Vector3(0, 0.235, 0.5)
+size = Vector3(0, 2.5, 5)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ef1ml"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aaq47"]
-albedo_texture = ExtResource("3_q2fsi")
+albedo_texture = ExtResource("3_q7cps")
 uv1_scale = Vector3(15, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_y8bhe"]
-size = Vector3(0, 0.1, 0.5)
+size = Vector3(0, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bbsoe"]
 size = Vector3(0, 0.1, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_a7w2v"]
-size = Vector3(0, 0.1, 0.5)
+size = Vector3(0, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_honta"]
 size = Vector3(0, 0.1, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hbysn"]
-size = Vector3(0, 0.1, 0.235)
+size = Vector3(0, 1, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0exin"]
 size = Vector3(0, 0.1, 0.23)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o04h0"]
-size = Vector3(0, 0.1, 0.235)
+size = Vector3(0, 1, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_au0qv"]
 size = Vector3(0, 0.1, 0.24)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhfaw"]
-albedo_texture = ExtResource("4_3gcm7")
-uv1_scale = Vector3(15, 15, 1)
+albedo_texture = ExtResource("4_ksrvb")
+uv1_scale = Vector3(6, 4, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lui5h"]
-albedo_texture = ExtResource("6_ghacl")
-uv1_triplanar_sharpness = 60.9189
-uv2_offset = Vector3(0.285, 0, 0)
-point_size = 12.6
-
-[sub_resource type="BoxMesh" id="BoxMesh_67llh"]
-
-[node name="Node3D" type="Node3D"]
-script = ExtResource("1_d47tn")
+[node name="First_room" type="Node3D"]
+script = ExtResource("1_vdwdv")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.992546, -0.0342047, 0.116971, 0, 0.959805, 0.280667, -0.121869, 0.278575, -0.952651, -0.303, 0.266, 0.066)
+transform = Transform3D(-0.992546, -0.0342046, 0.116971, 0, 0.959805, 0.280667, -0.121869, 0.278575, -0.952651, -0.220109, 0.464894, -0.609094)
+visible = false
 
 [node name="floor" type="StaticBody3D" parent="."]
 
 [node name="mesh" type="MeshInstance3D" parent="floor"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325393, 0.190158, 0.26)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325393, -0.256165, 0.26)
 material_override = SubResource("StandardMaterial3D_cdi2v")
 mesh = SubResource("BoxMesh_vjf0p")
 skeleton = NodePath("../..")
@@ -77,7 +70,7 @@ shape = SubResource("WorldBoundaryShape3D_ef1ml")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.253, 0, 0)
 
 [node name="mesh" type="MeshInstance3D" parent="wall"]
-transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.241, 0.188, 0.259)
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.241, 1.31725, 0.259)
 material_override = SubResource("StandardMaterial3D_aaq47")
 mesh = SubResource("BoxMesh_y8bhe")
 
@@ -89,7 +82,7 @@ shape = SubResource("BoxShape3D_bbsoe")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.02, 0, 0)
 
 [node name="mesh" type="MeshInstance3D" parent="wall2"]
-transform = Transform3D(-4.37114e-08, -1, 0, -1, 4.37114e-08, 8.74228e-08, -8.74228e-08, 3.82137e-15, -1, 0.240525, 0.187951, 0.259248)
+transform = Transform3D(-4.37114e-08, -1, 0, -1, 4.37114e-08, 8.74228e-08, -8.74228e-08, 3.82137e-15, -1, 0.240525, -0.944334, 0.259248)
 material_override = SubResource("StandardMaterial3D_aaq47")
 mesh = SubResource("BoxMesh_a7w2v")
 
@@ -101,7 +94,7 @@ shape = SubResource("BoxShape3D_honta")
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.540407, -0.000229493, -0.178312)
 
 [node name="mesh" type="MeshInstance3D" parent="wall3"]
-transform = Transform3D(-4.37114e-08, -1, -4.23516e-22, -1, 4.37114e-08, 8.74228e-08, -8.74228e-08, 3.82137e-15, -1, 0.241, 0.188, 0.216234)
+transform = Transform3D(-4.37114e-08, -1, 0, -1, 4.37114e-08, 8.74228e-08, -8.74228e-08, 3.82137e-15, -1, 0.241, -1.97762, 0.216234)
 material_override = SubResource("StandardMaterial3D_aaq47")
 mesh = SubResource("BoxMesh_hbysn")
 
@@ -113,7 +106,7 @@ shape = SubResource("BoxShape3D_0exin")
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.541, 0, 0.316)
 
 [node name="mesh" type="MeshInstance3D" parent="wall4"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.241, 0.188, 0.216038)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -4.23516e-22, 1, 0.241, 2.40192, 0.21061)
 material_override = SubResource("StandardMaterial3D_aaq47")
 mesh = SubResource("BoxMesh_o04h0")
 
@@ -125,7 +118,7 @@ shape = SubResource("BoxShape3D_au0qv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00135127, 0.098823, 0)
 
 [node name="mesh" type="MeshInstance3D" parent="ceiling"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325393, 0.190158, 0.26)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325393, 0.619373, 0.26)
 material_override = SubResource("StandardMaterial3D_mhfaw")
 mesh = SubResource("BoxMesh_vjf0p")
 skeleton = NodePath("../..")
@@ -133,20 +126,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ceiling"]
 shape = SubResource("WorldBoundaryShape3D_ef1ml")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.992345, 0, 0.123498, 0, 1, 0, -0.123498, 0, -0.992345, -0.33253, 0.249979, 0.0578922)
-light_energy = 0.185
-light_indirect_energy = 0.0
+[node name="door" parent="." instance=ExtResource("5_hhlfk")]
 
-[node name="door" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387073, 0.187941, -0.0651816)
-
-[node name="doorframe" parent="door" instance=ExtResource("5_bpcn3")]
-transform = Transform3D(0.0411036, -0.000309545, 0, 0.000376645, 0.0337809, 0, 0, 0, -0.00263167, -0.0210459, 0.00142653, 0.573267)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="door"]
-
-[node name="mesh_door" type="MeshInstance3D" parent="door"]
-transform = Transform3D(1.34984e-16, 4.37114e-10, 0.0446583, 0.0706471, -4.37114e-10, -6.10939e-24, 3.08808e-09, 0.01, -1.95208e-09, 0.104515, 0.0349603, 0.573832)
-material_override = SubResource("StandardMaterial3D_lui5h")
-mesh = SubResource("BoxMesh_67llh")
+[node name="ceiling_fan" parent="." instance=ExtResource("6_4iqrc")]
