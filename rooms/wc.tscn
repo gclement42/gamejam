@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://bndkqlfopi20i"]
 
-[ext_resource type="Texture2D" uid="uid://b3mi14vux8haw" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Tile 15 - 256x256.png" id="1_oyahd"]
-[ext_resource type="Texture2D" uid="uid://csokmu7u7wnqv" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Tile 4 - 256x256.png" id="2_8womo"]
-[ext_resource type="PackedScene" uid="uid://c85r457jl0u4n" path="res://door.tscn" id="3_j2ff2"]
-[ext_resource type="PackedScene" path="res://Assets/Models/toilet/toilet.glb" id="4_d1xag"]
+[ext_resource type="Texture2D" uid="uid://b3mi14vux8haw" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Tile 15 - 256x256.png" id="1_qtbde"]
+[ext_resource type="Texture2D" uid="uid://csokmu7u7wnqv" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Tile 4 - 256x256.png" id="2_4ntg4"]
+[ext_resource type="PackedScene" uid="uid://c85r457jl0u4n" path="res://objects/door.tscn" id="3_qmw4u"]
+[ext_resource type="PackedScene" uid="uid://cq2y5bdhawp8v" path="res://Assets/Models/toilet/toilet.glb" id="4_1ggww"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffhdh"]
-albedo_texture = ExtResource("1_oyahd")
+albedo_texture = ExtResource("1_qtbde")
 uv1_scale = Vector3(5, 5, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_c6nxs"]
@@ -17,7 +17,7 @@ size = Vector3(0, 2.5, 2.5)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ikqw1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2aql"]
-albedo_texture = ExtResource("2_8womo")
+albedo_texture = ExtResource("2_4ntg4")
 uv1_scale = Vector3(5, 5, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kega7"]
@@ -26,15 +26,15 @@ size = Vector3(0, 2, 2.5)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jhyi4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4xo6"]
-albedo_texture = ExtResource("2_8womo")
+albedo_texture = ExtResource("2_4ntg4")
 uv1_scale = Vector3(5, 5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ed240"]
-albedo_texture = ExtResource("2_8womo")
+albedo_texture = ExtResource("2_4ntg4")
 uv1_scale = Vector3(5, 5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ojew"]
-albedo_texture = ExtResource("2_8womo")
+albedo_texture = ExtResource("2_4ntg4")
 uv1_scale = Vector3(5, 5, 1)
 
 [node name="Wc" type="Node3D"]
@@ -108,7 +108,7 @@ material_override = SubResource("StandardMaterial3D_1ojew")
 mesh = SubResource("BoxMesh_kega7")
 skeleton = NodePath("../..")
 
-[node name="living_room_door4" parent="wall4/mesh2" instance=ExtResource("3_j2ff2")]
+[node name="living_room_door4" parent="wall4/mesh2" instance=ExtResource("3_qmw4u")]
 transform = Transform3D(-0.773263, 0.00456314, 0.634069, -0.00579291, -0.999984, 0.000131864, 0.634059, -0.00357114, 0.773276, -0.546736, 0.474492, 1.30406)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall4"]
@@ -119,7 +119,7 @@ shape = SubResource("WorldBoundaryShape3D_jhyi4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 
-[node name="toilet" parent="StaticBody3D/MeshInstance3D" instance=ExtResource("4_d1xag")]
+[node name="toilet" parent="StaticBody3D/MeshInstance3D" instance=ExtResource("4_1ggww")]
 transform = Transform3D(0.0130083, 0, -1.25667, 0, 0.822226, 0, 0.99636, 0, 0.0164068, 0.471316, -0.320936, 0.160627)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]

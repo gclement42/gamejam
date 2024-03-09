@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c85r457jl0u4n"]
 
-[ext_resource type="PackedScene" uid="uid://b4r58eu8w4jwq" path="res://Assets/Models/door/door.glb" id="1_5rs3g"]
+[ext_resource type="PackedScene" uid="uid://b4r58eu8w4jwq" path="res://Assets/Models/door/door.glb" id="1_51mgu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8ioc"]
 size = Vector3(0.693359, 0.753906, 0.542191)
@@ -12,5 +12,5 @@ transform = Transform3D(0.737277, 0, -0.67559, 0, 1, 0, 0.67559, 0, 0.737277, 0.
 transform = Transform3D(0.640297, 0, -0.768127, 0, 1, 0, 0.768127, 0, 0.640297, 0.0696371, -0.104122, 0.147252)
 shape = SubResource("BoxShape3D_p8ioc")
 
-[node name="door2" parent="." instance=ExtResource("1_5rs3g")]
+[node name="door2" parent="." instance=ExtResource("1_51mgu")]
 transform = Transform3D(-0.779492, 0, -0.185568, 0, 0.730203, 0, 0.657126, 0, -0.220123, 1.33094, -0.50886, -0.660687)
