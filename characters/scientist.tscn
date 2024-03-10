@@ -23,8 +23,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.550966, 0.835536, -0.24752
 shape = SubResource("BoxShape3D_3mhjt")
 
 [node name="Label" parent="." instance=ExtResource("2_6f4hd")]
-text = "Scientist:
-
-Hahahahaha je suis un scientifique totalement fouuuuuuuuuuuuuuuuuuuuuu"
+text = "Scientist:	Ah, greetings, inspector. You must be the one who responded to my distress call. I am Dr. Archibald Grey, a scientist, and I fear you've arrived in the midst of unexplainable events..."
 
 [editable path="scene"]

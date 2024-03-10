@@ -58,6 +58,7 @@ func _physics_process(delta):
 
 
 func _on_area_3d_body_entered(body):
+	print(body.name)
 	if body.name.find("pnj") != -1:
 		interact = true
 		pnj = body
