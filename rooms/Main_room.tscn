@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d1arhkibborkd"]
+[gd_scene load_steps=31 format=3 uid="uid://d1arhkibborkd"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_gy42h"]
 [ext_resource type="Texture2D" uid="uid://cykgrqssd3311" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Floor01_C.png" id="1_kp0jg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c85r457jl0u4n" path="res://objects/door.tscn" id="4_jck2h"]
 [ext_resource type="PackedScene" uid="uid://bb4xn5qrim8a6" path="res://Assets/Models/stairs_wide/stairs_wide.glb" id="5_e2kxh"]
 [ext_resource type="PackedScene" uid="uid://ddle3h5t1po1l" path="res://objects/pillar.tscn" id="6_1ju1u"]
+[ext_resource type="Script" path="res://Scripts/doorExiting.gd" id="6_w782e"]
 [ext_resource type="PackedScene" uid="uid://cng2rwuu34435" path="res://characters/player.tscn" id="7_lfefo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhiow"]
@@ -71,6 +72,12 @@ size = Vector3(0, 2, 2.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dxea2"]
 size = Vector3(0, 8, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vm3rv"]
+size = Vector3(1, 1.51758, 1.20306)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0k5g8"]
+size = Vector3(1.04346, 1.55579, 1.27039)
 
 [node name="MainRoom" type="Node3D"]
 script = ExtResource("1_gy42h")
@@ -302,11 +309,25 @@ skeleton = NodePath("../..")
 [node name="entrance_door" parent="." instance=ExtResource("4_jck2h")]
 transform = Transform3D(0.7596, 0, -0.65039, 0, 1, 0, 0.65039, 0, 0.7596, 1.45779, 0.288435, 5.14132)
 
-[node name="kitchen_door" parent="." instance=ExtResource("4_jck2h")]
+[node name="kitchenDoor" parent="." instance=ExtResource("4_jck2h")]
 transform = Transform3D(-0.65536, 0, -0.755316, 0, 1, 0, 0.755316, 0, -0.65536, -5.4325, 0.276558, 2.9816)
 
-[node name="kitchen_door2" parent="." instance=ExtResource("4_jck2h")]
+[node name="Area3D" type="Area3D" parent="kitchenDoor"]
+script = ExtResource("6_w782e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="kitchenDoor/Area3D"]
+transform = Transform3D(0.659924, 0, -0.751334, 0, 1, 0, 0.751334, 0, 0.659924, -1.27256, 0.258789, 1.10451)
+shape = SubResource("BoxShape3D_vm3rv")
+
+[node name="corridorDoor" parent="." instance=ExtResource("4_jck2h")]
 transform = Transform3D(0.691374, 0, 0.722496, 0, 1, 0, -0.722496, 0, 0.691374, 4.89839, 0.240285, -1.96741)
+
+[node name="Area3D" type="Area3D" parent="corridorDoor"]
+script = ExtResource("6_w782e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="corridorDoor/Area3D"]
+transform = Transform3D(0.676503, 0, -0.73644, 0, 1, 0, 0.73644, 0, 0.676503, -1.21936, 0.277893, 1.13648)
+shape = SubResource("BoxShape3D_0k5g8")
 
 [node name="bedroom_door" parent="." instance=ExtResource("4_jck2h")]
 transform = Transform3D(0.645791, 0, 0.763514, 0, 1, 0, -0.763514, 0, 0.645791, 2.52857, 2.26306, -5.71506)
@@ -326,16 +347,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35078, -0.0752087, -2.9765
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.915551, 0.402203, 0, -0.402203, 0.915551, -1.14304, 1.78896, 4.76159)
 
-[node name="Player" parent="." instance=ExtResource("7_lfefo")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("7_lfefo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.246924, 0)
 
 [node name="CameraPivot" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.198772, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(0.174768, -0.0853892, 0.9809, -0.0188784, 0.995759, 0.0900463, -0.984429, -0.0342551, 0.172415, 3.99254, 1.03701, 2.86415)
+transform = Transform3D(0.755444, -0.0447898, 0.65368, -0.0188784, 0.995759, 0.0900462, -0.654941, -0.0803653, 0.751395, 3.99254, 1.03701, 3.0098)
 fov = 78.2471
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50875, 1.31311, 2.18827)
+light_energy = 11.33
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36547, 1.31311, 2.18827)
 light_energy = 11.33

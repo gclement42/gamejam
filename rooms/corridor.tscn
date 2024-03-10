@@ -1,9 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5joo4yhn1w8c"]
+[gd_scene load_steps=16 format=3 uid="uid://b5joo4yhn1w8c"]
 
 [ext_resource type="PackedScene" uid="uid://c85r457jl0u4n" path="res://objects/door.tscn" id="1_qo4ol"]
 [ext_resource type="Texture2D" uid="uid://cykgrqssd3311" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Floor01_C.png" id="2_2cenj"]
+[ext_resource type="Script" path="res://Scripts/doorExiting.gd" id="2_pqlml"]
 [ext_resource type="Texture2D" uid="uid://biceajljrqe03" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Wall03_C.png" id="3_ei734"]
 [ext_resource type="PackedScene" uid="uid://cng2rwuu34435" path="res://characters/player.tscn" id="4_cso57"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mdep6"]
+size = Vector3(1.27576, 1.49176, 1.24426)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nkpte"]
+size = Vector3(1.27576, 1.49176, 1.24426)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ucsor"]
+size = Vector3(1.38995, 1.49176, 1.24426)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6o12"]
 albedo_texture = ExtResource("2_2cenj")
@@ -23,7 +33,7 @@ uv1_scale = Vector3(15, 1, 1)
 size = Vector3(0, 2, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5cf4k"]
-size = Vector3(0.12072, 2, 10)
+size = Vector3(0.0942669, 2, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_520q3"]
 size = Vector3(0, 2, 5)
@@ -31,27 +41,48 @@ size = Vector3(0, 2, 5)
 [node name="Corridor" type="Node3D"]
 
 [node name="living_room_door" parent="." instance=ExtResource("1_qo4ol")]
-transform = Transform3D(-0.744208, -0.0252732, 0.667469, -0.0348836, 0.999391, -0.00105299, -0.667036, -0.0240674, -0.744636, -2.78063, 0.192259, -4.83054)
+transform = Transform3D(-0.744208, -0.0252732, 0.667469, -0.0348836, 0.999391, -0.00105299, -0.667036, -0.0240674, -0.744636, -2.72864, 0.192177, -4.88855)
 
-[node name="living_room_door3" parent="." instance=ExtResource("1_qo4ol")]
+[node name="bathroomDoor" parent="." instance=ExtResource("1_qo4ol")]
 transform = Transform3D(-0.64679, 0, -0.762668, 0, 1, 0, 0.762668, 0, -0.646789, -2.92348, 0.261535, -0.917842)
 
-[node name="living_room_door4" parent="." instance=ExtResource("1_qo4ol")]
+[node name="Area3D" type="Area3D" parent="bathroomDoor"]
+script = ExtResource("2_pqlml")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bathroomDoor/Area3D"]
+transform = Transform3D(0.653354, 0, -0.757052, 0, 1, 0, 0.757052, 0, 0.653354, -1.26283, 0.260041, 1.10707)
+shape = SubResource("BoxShape3D_mdep6")
+
+[node name="wcDoor" parent="." instance=ExtResource("1_qo4ol")]
 transform = Transform3D(-0.64679, 0, -0.762668, 0, 1, 0, 0.762668, 0, -0.646789, -2.95153, 0.253837, 4.01609)
 
-[node name="living_room_door2" parent="." instance=ExtResource("1_qo4ol")]
+[node name="Area3D" type="Area3D" parent="wcDoor"]
+script = ExtResource("2_pqlml")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wcDoor/Area3D"]
+transform = Transform3D(0.649116, 0, -0.760689, 0, 1, 0, 0.760689, 0, 0.649116, -1.2703, 0.280396, 1.11438)
+shape = SubResource("BoxShape3D_nkpte")
+
+[node name="mainRoomDoor" parent="." instance=ExtResource("1_qo4ol")]
 transform = Transform3D(0.76509, 0, -0.643923, 0, 1, 0, 0.643923, 0, 0.76509, 1.44567, 0.255234, 5.33241)
+
+[node name="Area3D" type="Area3D" parent="mainRoomDoor"]
+script = ExtResource("2_pqlml")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mainRoomDoor/Area3D"]
+transform = Transform3D(0.650111, 0, -0.759839, 0, 1, 0, 0.759839, 0, 0.650111, -1.18769, 0.214942, 1.1702)
+shape = SubResource("BoxShape3D_ucsor")
 
 [node name="floor" type="StaticBody3D" parent="."]
 
 [node name="mesh" type="MeshInstance3D" parent="floor"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325393, -0.256165, 0.26)
+transform = Transform3D(-4.37114e-08, -1.69366, 0, 1, -7.40324e-08, 0, 0, 0, 1, -0.325393, -0.256165, 0.26)
 material_override = SubResource("StandardMaterial3D_w6o12")
 mesh = SubResource("BoxMesh_nl8q2")
 skeleton = NodePath("../..")
 
 [node name="mesh2" type="MeshInstance3D" parent="floor"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325393, 1.70587, 0.26)
+transform = Transform3D(-4.37114e-08, -1.44945, 0, 1, -6.33574e-08, 0, 0, 0, 1, -0.325393, 1.70587, 0.26)
 material_override = SubResource("StandardMaterial3D_w6o12")
 mesh = SubResource("BoxMesh_nl8q2")
 skeleton = NodePath("../..")
@@ -76,7 +107,7 @@ shape = SubResource("BoxShape3D_5cf4k")
 transform = Transform3D(-4.37114e-08, 1, 0, 1, 4.37114e-08, 8.74228e-08, 8.74228e-08, 3.82137e-15, -1, -2.8605, -0.11721, 0.447348)
 
 [node name="mesh" type="MeshInstance3D" parent="wall_left_1"]
-transform = Transform3D(-4.37114e-08, -1, -2.95823e-30, 1, -4.37114e-08, 6.61744e-23, -6.61744e-23, -6.56524e-32, 1, 0.841738, 5.01238, 0.259)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -6.61744e-23, 0, 1, 0.841738, 8.22414, 0.259)
 material_override = SubResource("StandardMaterial3D_1o6fc")
 mesh = SubResource("BoxMesh_1adrv")
 
@@ -105,12 +136,12 @@ material_override = SubResource("StandardMaterial3D_1o6fc")
 mesh = SubResource("BoxMesh_520q3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_left_3"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -4.23516e-22, 1, 0.739496, 5.02979, 2.70154)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -4.23516e-22, 1, 0.739496, 5.01656, 2.70154)
 shape = SubResource("BoxShape3D_5cf4k")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.760803, 0, 0.648983, 0, 1, 0, -0.648983, 0, 0.760803, 2.00866, 0.706575, 5.09462)
-fov = 61.7296
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9439, 0.939721, 0.261045)
+fov = 62.863
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12857, 2.26506)
@@ -122,5 +153,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12857, -0.935036)
 light_energy = 5.0
 light_size = 0.095
 
-[node name="Player" parent="." instance=ExtResource("4_cso57")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("4_cso57")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.29225, 0)

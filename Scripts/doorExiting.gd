@@ -1,8 +1,17 @@
 extends Area3D
 
+var global = preload("res://Scripts/global.gd").new()
 var is_player_near_door = false
+var rooms = {
+	"corridorDoor": "res://rooms/corridor.tscn",
+	"bathroomDoor": "res://rooms/bathroom.tscn",
+	"kitchenDoor": "res://rooms/kitchen.tscn",
+	"wcDoor": "res://rooms/wc.tscn",
+	"mainRoomDoor": "res://rooms/Main_room.tscn"
+}
 
 func _ready():
+	global.instance.playerSpawnLocation = Vector3(0, 0, 0)
 	connect("body_entered", _on_player_entered)
 	connect("body_exited", _on_player_exited)
 
@@ -11,9 +20,8 @@ func _process(delta):
 	pass
 
 func _input(event):
-	print(is_player_near_door)
 	if event.is_action_pressed("Interact") && is_player_near_door:
-		get_tree().change_scene_to_file("res://rooms/corridor.tscn")
+		get_tree().change_scene_to_file(rooms[get_parent().name])
 
 func _on_player_entered(body):
 	if body.is_in_group("Player"):

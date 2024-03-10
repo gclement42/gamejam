@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bndkqlfopi20i"]
+[gd_scene load_steps=23 format=3 uid="uid://bndkqlfopi20i"]
 
 [ext_resource type="Texture2D" uid="uid://b3mi14vux8haw" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Tile 15 - 256x256.png" id="1_qtbde"]
 [ext_resource type="Texture2D" uid="uid://csokmu7u7wnqv" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Tile 4 - 256x256.png" id="2_4ntg4"]
 [ext_resource type="PackedScene" uid="uid://c85r457jl0u4n" path="res://objects/door.tscn" id="3_qmw4u"]
-[ext_resource type="PackedScene" uid="uid://cq2y5bdhawp8v" path="res://Assets/Models/toilet/toilet.glb" id="4_1ggww"]
+[ext_resource type="PackedScene" uid="uid://cq2y5bdhawp8v" path="res://Assets/Models/bathtub/toilet.glb" id="4_1ggww"]
+[ext_resource type="Script" path="res://Scripts/doorExiting.gd" id="4_g0xb0"]
 [ext_resource type="PackedScene" uid="uid://cng2rwuu34435" path="res://characters/player.tscn" id="5_qg7mx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffhdh"]
@@ -48,6 +49,9 @@ size = Vector3(0.0668335, 2, 2.5)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ojew"]
 albedo_texture = ExtResource("2_4ntg4")
 uv1_scale = Vector3(5, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pr3w5"]
+size = Vector3(0.95752, 1.58484, 1.26831)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ccpag"]
 size = Vector3(0.0224727, 2, 2.5)
@@ -128,8 +132,15 @@ material_override = SubResource("StandardMaterial3D_1ojew")
 mesh = SubResource("BoxMesh_kega7")
 skeleton = NodePath("../..")
 
-[node name="living_room_door4" parent="wall4/mesh2" instance=ExtResource("3_qmw4u")]
+[node name="corridorDoor" parent="wall4/mesh2" instance=ExtResource("3_qmw4u")]
 transform = Transform3D(-0.773263, 0.00456314, 0.634069, -0.00579291, -0.999984, 0.000131864, 0.634059, -0.00357114, 0.773276, -0.546736, 0.474492, 1.30406)
+
+[node name="Area3D" type="Area3D" parent="wall4/mesh2/corridorDoor"]
+script = ExtResource("4_g0xb0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall4/mesh2/corridorDoor/Area3D"]
+transform = Transform3D(0.643055, -1.28057e-08, -0.76582, -1.23691e-10, 1, -1.62981e-08, 0.76582, 1.00117e-08, 0.643055, -1.18539, 0.268797, 1.10532)
+shape = SubResource("BoxShape3D_pr3w5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall4"]
 transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0.869479, 0.741615, 0.325085)
@@ -152,5 +163,5 @@ transform = Transform3D(-0.573562, 0, 0.819162, 0, 1, 0, -0.819162, 0, -0.573562
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.480645, 1.44759, 0)
 
-[node name="Player" parent="." instance=ExtResource("5_qg7mx")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("5_qg7mx")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.03698, -0.281522, 0.381301)
