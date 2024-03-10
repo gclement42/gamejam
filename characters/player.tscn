@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cng2rwuu34435"]
+[gd_scene load_steps=5 format=3 uid="uid://cng2rwuu34435"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_0oxmc"]
 [ext_resource type="PackedScene" uid="uid://bopv3nx7w3ny5" path="res://Assets/Characters/DamianCooper/DamianCooper.tscn" id="2_jhxe7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rjeb1"]
 size = Vector3(0.22513, 0.633986, 0.374847)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hbh61"]
+height = 1.27859
+radius = 0.947625
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_0oxmc")
@@ -17,3 +21,12 @@ transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 0, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00955707, 0.325763, 0.0350189)
 shape = SubResource("BoxShape3D_rjeb1")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0192775, 0.670165, 0.0426732)
+shape = SubResource("CylinderShape3D_hbh61")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

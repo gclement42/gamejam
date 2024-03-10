@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cakmp3sp02sya"
-path="res://.godot/imported/JessicaBuzzcut.glb-a6d2ba2fe05b107bab158093decb3e89.scn"
+uid="uid://de0ttjxado2mr"
+path="res://.godot/imported/pnj.glb-ce18464f4c30d940bebe73949221da6f.scn"
 
 [deps]
 
-source_file="res://Assets/Characters/JessicaBuzzcut/JessicaBuzzcut.glb"
-dest_files=["res://.godot/imported/JessicaBuzzcut.glb-a6d2ba2fe05b107bab158093decb3e89.scn"]
+source_file="res://Assets/Characters/PNJ/pnj.glb"
+dest_files=["res://.godot/imported/pnj.glb-ce18464f4c30d940bebe73949221da6f.scn"]
 
 [params]
 

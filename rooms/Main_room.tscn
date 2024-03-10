@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d1arhkibborkd"]
+[gd_scene load_steps=30 format=3 uid="uid://d1arhkibborkd"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_gy42h"]
 [ext_resource type="Texture2D" uid="uid://cykgrqssd3311" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Floor01_C.png" id="1_kp0jg"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bb4xn5qrim8a6" path="res://Assets/Models/stairs_wide/stairs_wide.glb" id="5_e2kxh"]
 [ext_resource type="PackedScene" uid="uid://ddle3h5t1po1l" path="res://objects/pillar.tscn" id="6_1ju1u"]
 [ext_resource type="PackedScene" uid="uid://cng2rwuu34435" path="res://characters/player.tscn" id="7_lfefo"]
+[ext_resource type="PackedScene" uid="uid://besh3o0o31lf" path="res://characters/Elton.tscn" id="9_6kadt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhiow"]
 albedo_texture = ExtResource("1_kp0jg")
@@ -66,8 +67,6 @@ uv1_scale = Vector3(2.27, 7.95, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_83dh7"]
 size = Vector3(0, 10, 2.5)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_o8eor"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_2a711"]
 size = Vector3(1.8434, 1, 1.72107)
 
@@ -101,7 +100,7 @@ material_override = SubResource("StandardMaterial3D_nhiow")
 mesh = SubResource("BoxMesh_plv6f")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ceilor"]
+[node name="ceilor#CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.325393, -0.256165, 0.26)
 shape = SubResource("BoxShape3D_yuk14")
 
@@ -344,3 +343,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.198772, 0)
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(0.963365, -0.00598236, 0.268126, -0.0188784, 0.995759, 0.0900463, -0.267527, -0.0918093, 0.959166, 1.03556, 1.36829, 4.94923)
 fov = 44.5872
+
+[node name="pnj_Elton" parent="." instance=ExtResource("9_6kadt")]
+transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, -1.03361, -0.251465, 1.9013)
