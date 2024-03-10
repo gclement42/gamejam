@@ -1,6 +1,5 @@
 extends Area3D
 
-var global = preload("res://Scripts/global.gd").new()
 var is_player_near_door = false
 var rooms = {
 	"corridorDoor": "res://rooms/corridor.tscn",
@@ -11,7 +10,6 @@ var rooms = {
 }
 
 func _ready():
-	global.instance.playerSpawnLocation = Vector3(0, 0, 0)
 	connect("body_entered", _on_player_entered)
 	connect("body_exited", _on_player_exited)
 
