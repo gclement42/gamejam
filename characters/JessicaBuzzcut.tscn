@@ -1,3 +1,33 @@
-[gd_scene format=3 uid="uid://c1ydre613082t"]
+[gd_scene load_steps=5 format=3 uid="uid://c1ydre613082t"]
 
-[node name="JessicaBuzzcut" type="Node3D"]
+[ext_resource type="Script" path="res://characters/Elton.gd" id="1_kisqi"]
+[ext_resource type="PackedScene" uid="uid://cakmp3sp02sya" path="res://Assets/Characters/JessicaBuzzcut/JessicaBuzzcut.glb" id="1_s5m0j"]
+[ext_resource type="PackedScene" uid="uid://b2aqpqmnewb03" path="res://helpers/label.tscn" id="3_a0gtl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1xy6j"]
+size = Vector3(2.22498, 4.14594, 1)
+
+[node name="Jessica" type="CharacterBody3D"]
+script = ExtResource("1_kisqi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.547998, 1.9618, -1.67456)
+shape = SubResource("BoxShape3D_1xy6j")
+
+[node name="JessicaBuzzcut" parent="." instance=ExtResource("1_s5m0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650304, -0.140205, -1.8011)
+
+[node name="Skeleton3D" parent="JessicaBuzzcut/Armature" index="0"]
+bones/5/rotation = Quaternion(-0.745525, -0.280525, -0.596525, 0.490475)
+bones/6/rotation = Quaternion(-0.355525, 0.014475, -0.090525, 0.947475)
+bones/8/rotation = Quaternion(-0.011525, -0.00752503, 0.033475, 0.993475)
+bones/10/rotation = Quaternion(-0.390525, -0.014525, 0.090475, 0.947475)
+bones/11/rotation = Quaternion(-0.075525, -0.00452503, 0.027475, 0.998475)
+bones/12/rotation = Quaternion(-0.081525, 0.00747497, -0.033525, 0.993475)
+
+[node name="Label" parent="." instance=ExtResource("3_a0gtl")]
+text = "Jessica:
+
+HIHIHIHIHI"
+
+[editable path="JessicaBuzzcut"]

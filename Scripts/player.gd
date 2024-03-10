@@ -69,5 +69,6 @@ func _on_area_3d_body_exited(body):
 	if body.name.find("pnj") != -1:
 		interact = false
 		pnj = null
+		dialog_is_open = false
 		body.close_dialog()
 	
