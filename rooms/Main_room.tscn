@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ddle3h5t1po1l" path="res://objects/pillar.tscn" id="6_1ju1u"]
 [ext_resource type="Script" path="res://Scripts/doorExiting.gd" id="6_w782e"]
 [ext_resource type="PackedScene" uid="uid://cng2rwuu34435" path="res://characters/player.tscn" id="7_lfefo"]
+[ext_resource type="PackedScene" uid="uid://besh3o0o31lf" path="res://characters/Elton.tscn" id="9_6kadt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhiow"]
 albedo_texture = ExtResource("1_kp0jg")
@@ -100,6 +101,10 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325
 material_override = SubResource("StandardMaterial3D_nhiow")
 mesh = SubResource("BoxMesh_plv6f")
 skeleton = NodePath("../..")
+
+[node name="ceilor#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.325393, -0.256165, 0.26)
+shape = SubResource("BoxShape3D_yuk14")
 
 [node name="wall_left_0" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.253, 0, 0)
@@ -362,3 +367,5 @@ light_energy = 11.33
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36547, 1.31311, 2.18827)
 light_energy = 11.33
+[node name="pnj_Elton" parent="." instance=ExtResource("9_6kadt")]
+transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, -1.03361, -0.251465, 1.9013)
