@@ -19,7 +19,6 @@ shape = SubResource("BoxShape3D_nvbw3")
 [node name="Label" parent="." instance=ExtResource("3_chhhx")]
 offset_left = -2.0
 offset_top = 515.0
-offset_right = 0.0
 offset_bottom = -35.176
 text = "Elton:
 

@@ -1,10 +1,11 @@
 extends CharacterBody3D
 
+@export var is_active = false
 @onready var label = $Label
 
 func _ready():
-	label = false
-
+	label.visible = false
+	
 func dialog():
 	label.visible = true
 	

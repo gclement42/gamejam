@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d088nlnaw5xqv"]
 
-[ext_resource type="Script" path="res://Scripts/Elton.gd" id="1_qb6f4"]
+[ext_resource type="Script" path="res://characters/Elton.gd" id="1_qb6f4"]
 [ext_resource type="PackedScene" uid="uid://bf7cjw0scptpi" path="res://Assets/Characters/scientist/scientist_psx_style.glb" id="1_smsmf"]
 [ext_resource type="PackedScene" uid="uid://bn7hxxl2rl0jr" path="res://helpers/label.tscn" id="2_6f4hd"]
 
