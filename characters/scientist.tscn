@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d088nlnaw5xqv"]
+
+[ext_resource type="Script" path="res://characters/Elton.gd" id="1_qb6f4"]
+[ext_resource type="PackedScene" uid="uid://bf7cjw0scptpi" path="res://Assets/Characters/scientist/scientist_psx_style.glb" id="1_smsmf"]
+[ext_resource type="PackedScene" uid="uid://b2aqpqmnewb03" path="res://helpers/label.tscn" id="2_6f4hd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mhjt"]
+size = Vector3(1, 1.72339, 0.470215)
+
+[node name="Scientist" type="CharacterBody3D"]
+script = ExtResource("1_qb6f4")
+
+[node name="scene" parent="." instance=ExtResource("1_smsmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522082, 0, -0.215088)
+
+[node name="Skeleton3D" parent="scene/Sketchfab_model/scientist_fbx/RootNode/Armature/Object_4" index="0"]
+bones/8/rotation = Quaternion(-0.353525, 0.690475, -0.459525, 0.537475)
+bones/13/rotation = Quaternion(-0.103525, -0.690525, 0.459475, 0.537475)
+bones/14/rotation = Quaternion(1.07148, -0.068525, -0.00952503, 0.996475)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.550966, 0.835536, -0.247521)
+shape = SubResource("BoxShape3D_3mhjt")
+
+[node name="Label" parent="." instance=ExtResource("2_6f4hd")]
+text = "Scientist:
+
+Hahahahaha je suis un scientifique totalement fouuuuuuuuuuuuuuuuuuuuuu"
+
+[editable path="scene"]
