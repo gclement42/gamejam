@@ -9,10 +9,6 @@ size = Vector3(0.635929, 1.27451, 0.474224)
 [sub_resource type="BoxShape3D" id="BoxShape3D_otidd"]
 size = Vector3(0.919232, 1.27451, 0.855811)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_hbh61"]
-height = 1.27859
-radius = 0.947625
-
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_0oxmc")
 
@@ -28,8 +24,5 @@ shape = SubResource("BoxShape3D_rjeb1")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0192775, 0.670165, 0.0426732)
-shape = SubResource("CylinderShape3D_hbh61")
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.471352, 0.646026, -0.0241329)
+shape = SubResource("BoxShape3D_otidd")

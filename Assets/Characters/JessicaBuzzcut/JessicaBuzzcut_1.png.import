@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccifvlsj6iq4f"
-path.s3tc="res://.godot/imported/JessicaBuzzcut_secretary_tex.png-9361d3f33feb97ce1c3acc20572fd014.s3tc.ctex"
+uid="uid://dhtakujym53gk"
+path.s3tc="res://.godot/imported/JessicaBuzzcut_1.png-90eba9490d231fdde3cfc486706c0141.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Characters/JessicaBuzzcut/JessicaBuzzcut_secretary_tex.png"
-dest_files=["res://.godot/imported/JessicaBuzzcut_secretary_tex.png-9361d3f33feb97ce1c3acc20572fd014.s3tc.ctex"]
+source_file="res://Assets/Characters/JessicaBuzzcut/JessicaBuzzcut_1.png"
+dest_files=["res://.godot/imported/JessicaBuzzcut_1.png-90eba9490d231fdde3cfc486706c0141.s3tc.ctex"]
 
 [params]
 

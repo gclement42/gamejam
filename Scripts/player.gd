@@ -3,12 +3,8 @@ extends CharacterBody3D
 @export var speed = 3
 @export var fallAcceleration = 70
 var target_velocity = Vector3.ZERO
-var interact = false
-var pnj
-var dialog_is_open = false
 
 func _physics_process(delta):
-	#print(interact)
 	
 	var direction = Vector3.ZERO
 	
@@ -48,26 +44,4 @@ func _physics_process(delta):
 		animations.stop();
 	if !animations.is_playing():
 		animations.play("Armature|mixamo_com|Layer0_001")
-	if Input.is_action_just_pressed("Interact") and interact:
-		pnj.dialog()
-		dialog_is_open = true
-		interact = false
-	elif Input.is_action_just_pressed("Interact") and dialog_is_open:
-		pnj.close_dialog()
-		dialog_is_open = false
-	
-
-
-func _on_area_3d_body_entered(body):
-	if body.name.find("pnj") != -1:
-		interact = true
-		pnj = body
-		
-
-
-func _on_area_3d_body_exited(body):
-	if body.name.find("pnj") != -1:
-		interact = false
-		pnj = null
-		body.close_dialog()
 	
