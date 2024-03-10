@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgxtdfjpf3jxj"
-path.s3tc="res://.godot/imported/scientist_psx_style_0.png-8d628e7a05e4c7a710f597c48adc974b.s3tc.ctex"
+uid="uid://7frog0mqk72f"
+path.s3tc="res://.godot/imported/grotony_0.png-cae1b6158da8cf00e957c0d97e010fe0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Characters/scientist_psx_style_0.png"
-dest_files=["res://.godot/imported/scientist_psx_style_0.png-8d628e7a05e4c7a710f597c48adc974b.s3tc.ctex"]
+source_file="res://Assets/Characters/grotony/grotony_0.png"
+dest_files=["res://.godot/imported/grotony_0.png-cae1b6158da8cf00e957c0d97e010fe0.s3tc.ctex"]
 
 [params]
 
