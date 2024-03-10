@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://gyf36fu1et07"]
 
-[ext_resource type="PackedScene" uid="uid://7apxauo1j2iq" path="res://Assets/Characters/DamianCooper.glb" id="1_rmnkt"]
+[ext_resource type="PackedScene" uid="uid://cvou16e37fkiw" path="res://Assets/Characters/DamianCooper/DamianCooper.glb" id="1_rmnkt"]
 
 [node name="DamianCooper" instance=ExtResource("1_rmnkt")]
 

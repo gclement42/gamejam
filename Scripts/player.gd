@@ -3,6 +3,9 @@ extends CharacterBody3D
 @export var speed = 3
 @export var fallAcceleration = 70
 var target_velocity = Vector3.ZERO
+var interact = false
+var pnj
+var dialog_is_open = false
 
 func _physics_process(delta):
 	

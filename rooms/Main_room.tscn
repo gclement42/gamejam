@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ddle3h5t1po1l" path="res://objects/pillar.tscn" id="6_1ju1u"]
 [ext_resource type="Script" path="res://Scripts/doorExiting.gd" id="6_w782e"]
 [ext_resource type="PackedScene" uid="uid://cng2rwuu34435" path="res://characters/player.tscn" id="7_lfefo"]
-[ext_resource type="PackedScene" uid="uid://c1ydre613082t" path="res://characters/JessicaBuzzcut.tscn" id="10_qsm7d"]
+[ext_resource type="PackedScene" uid="uid://gyf36fu1et07" path="res://characters/damianCooperWalk.tscn" id="10_qsm7d"]
 [ext_resource type="PackedScene" uid="uid://d088nlnaw5xqv" path="res://characters/scientist.tscn" id="11_oxv5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhiow"]
