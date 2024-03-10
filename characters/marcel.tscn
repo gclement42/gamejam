@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgnmhxfrqr0ca"]
+
+[ext_resource type="Script" path="res://characters/Elton.gd" id="1_ak00l"]
+[ext_resource type="PackedScene" uid="uid://bn7hxxl2rl0jr" path="res://helpers/label.tscn" id="3_5tnq6"]
+[ext_resource type="PackedScene" uid="uid://chpomo6r71l0k" path="res://Assets/Characters/Marcel/character__male_01.glb" id="3_d2546"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kk00b"]
+size = Vector3(0.627197, 1.39496, 0.470215)
+
+[node name="pnj_marcel" type="CharacterBody3D"]
+script = ExtResource("1_ak00l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51642, 0.919795, -0.247521)
+shape = SubResource("BoxShape3D_kk00b")
+
+[node name="Label" parent="." instance=ExtResource("3_5tnq6")]
+text = "Scientist:
+
+Hahahahaha je suis un scientifique totalement fouuuuuuuuuuuuuuuuuuuuuu"
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_d2546")]
+transform = Transform3D(0.530625, 0, 0, 0, 0.48057, 0, 0, 0, 0.616251, -0.508681, 0.312268, -0.189828)

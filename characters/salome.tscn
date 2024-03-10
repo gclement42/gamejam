@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4ivkhfulrp7g"]
+
+[ext_resource type="Script" path="res://characters/Elton.gd" id="1_bsvel"]
+[ext_resource type="PackedScene" uid="uid://bn7hxxl2rl0jr" path="res://helpers/label.tscn" id="2_0oe3l"]
+[ext_resource type="PackedScene" uid="uid://bd502gqe6dlsc" path="res://Assets/Characters/Salome/character__female_01.glb" id="3_3jne8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_btfw1"]
+size = Vector3(1.13335, 3.20897, 0.684937)
+
+[node name="pnj_salome" type="CharacterBody3D"]
+script = ExtResource("1_bsvel")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.424833, 2.3772, 0.0974877)
+shape = SubResource("BoxShape3D_btfw1")
+
+[node name="Label" parent="." instance=ExtResource("2_0oe3l")]
+text = "Scientist:
+
+Hahahahaha je suis un scientifique totalement fouuuuuuuuuuuuuuuuuuuuuu"
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_3jne8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.376755, 1.09466, 0.246204)

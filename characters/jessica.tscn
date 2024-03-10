@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb5i16f8h04ur"]
+
+[ext_resource type="Script" path="res://characters/Elton.gd" id="1_6cxui"]
+[ext_resource type="PackedScene" uid="uid://bn7hxxl2rl0jr" path="res://helpers/label.tscn" id="3_67s5p"]
+[ext_resource type="PackedScene" uid="uid://d0me0rhaversm" path="res://Assets/Characters/JessicaBuzzcut/JessicaBuzzcut.glb" id="3_ua6r6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_btfw1"]
+size = Vector3(2.26608, 4.19159, 0.684937)
+
+[node name="pnj_jessica" type="CharacterBody3D"]
+script = ExtResource("1_6cxui")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0689718, 2.03161, 0.0974877)
+shape = SubResource("BoxShape3D_btfw1")
+
+[node name="Label" parent="." instance=ExtResource("3_67s5p")]
+text = "Scientist:
+
+Hahahahaha je suis un scientifique totalement fouuuuuuuuuuuuuuuuuuuuuu"
+
+[node name="JessicaBuzzcut" parent="." instance=ExtResource("3_ua6r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050966, 0.258509, -0.0837742)

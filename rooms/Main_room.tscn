@@ -366,4 +366,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36547, 1.31311, 2.18827)
 light_energy = 11.33
 
 [node name="pnj_scientist" parent="." instance=ExtResource("11_oxv5a")]
-transform = Transform3D(0.48803, 0, -0.671462, 0, 0.767139, 0, 0.442208, 0, 0.741039, 2.45615, -0.251465, 0.458916)
+transform = Transform3D(0.48819, 0, -0.671682, 0, 0.76739, 0, 0.442353, 0, 0.741282, 2.45615, -0.251465, 0.458916)
