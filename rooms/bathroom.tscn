@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://bkjjbgbbh74ey"]
+[gd_scene load_steps=22 format=3 uid="uid://bkjjbgbbh74ey"]
 
+[ext_resource type="Script" path="res://Scripts/bathroom.gd" id="1_1mg57"]
 [ext_resource type="Texture2D" uid="uid://b3mi14vux8haw" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Tile 15 - 256x256.png" id="1_a5t8p"]
 [ext_resource type="Texture2D" uid="uid://csokmu7u7wnqv" path="res://Assets/Architecture Kit Export/Architecture Kit Export/Textures/Architecture/Tile 4 - 256x256.png" id="2_1wayf"]
 [ext_resource type="PackedScene" uid="uid://c85r457jl0u4n" path="res://objects/door.tscn" id="3_plypf"]
 [ext_resource type="PackedScene" uid="uid://col2a3mlp2tbv" path="res://Assets/Models/bathtub/bathtub.glb" id="4_prdmd"]
+[ext_resource type="Script" path="res://Scripts/doorExiting.gd" id="4_vwhyr"]
 [ext_resource type="PackedScene" uid="uid://ccuw38skmnv4o" path="res://Assets/Models/bathtub/bathtub_sink.glb" id="5_ds0h2"]
 [ext_resource type="PackedScene" uid="uid://c2iqjagdh7j1r" path="res://Assets/Models/dresser/dresser.glb" id="6_s8iqf"]
 [ext_resource type="PackedScene" uid="uid://cng2rwuu34435" path="res://characters/player.tscn" id="7_m6r1d"]
@@ -14,6 +16,9 @@ uv1_scale = Vector3(5, 5, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_a42vu"]
 size = Vector3(0, 8, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_14gyu"]
+size = Vector3(1.28558, 1.5282, 0.344971)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lpjfc"]
 size = Vector3(2.3621, 0.76045, 1.50981)
@@ -44,6 +49,7 @@ size = Vector3(0, 2, 8)
 size = Vector3(0, 8, 5.51074)
 
 [node name="Bathroom" type="Node3D"]
+script = ExtResource("1_1mg57")
 
 [node name="mesh_floor2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325393, 1.58893, 0.32023)
@@ -53,6 +59,13 @@ skeleton = NodePath("../../..")
 
 [node name="living_room_door4" parent="." instance=ExtResource("3_plypf")]
 transform = Transform3D(0.773263, -0.00456323, -0.634069, 0.00579298, 0.999984, -0.000131919, 0.634059, -0.00357114, 0.773276, 1.38317, 0.282244, 2.90139)
+
+[node name="Area3D2" type="Area3D" parent="living_room_door4"]
+script = ExtResource("4_vwhyr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="living_room_door4/Area3D2"]
+transform = Transform3D(0.779614, -0.00461993, 0.626243, 0.00133589, 0.999983, 0.00571404, -0.626259, -0.00361816, 0.779607, -1.39486, 0.270644, 0.948173)
+shape = SubResource("BoxShape3D_14gyu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -94,8 +107,8 @@ transform = Transform3D(0.00749042, 0, -0.99999, 0, 1.4754, 0, 1.6963, 0, 0.0044
 transform = Transform3D(-0.0156022, 0, 0.999878, 0, 1, 0, -0.999878, 0, -0.0156022, 3.53204, 0.796875, -0.758837)
 fov = 60.2998
 
-[node name="Player" parent="." instance=ExtResource("7_m6r1d")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.821028, -0.29452, 1.1992)
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("7_m6r1d")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.373751, -0.29452, 2.29396)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44898, 1.28658, 0)
